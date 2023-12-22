@@ -1,0 +1,19 @@
+{
+  "history_forecast_ratio": 10,
+  "lags_forecast_ratio": 3,
+  "lags_seq": null,
+  "d_model": 32,
+  "nhead": 4,
+  "dim_feedforward": 128,
+  "num_encoder_layers": 2,
+  "norm_first": false,
+  "activation": "relu",
+  "lr": 1e-3,
+  "dropout": 0.1,
+  "context_length": null,
+  "scaling": "mean",
+  "early_stopping_patience": 20,
+  "min_delta": 0.001,
+  "trainer_kwargs": {"max_epochs": 200, "accelerator": "gpu"},
+  "use_exogenous": true
+}
