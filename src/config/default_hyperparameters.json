@@ -12,6 +12,7 @@
   "dropout": 0.1,
   "context_length": null,
   "scaling": "mean",
+  "early_stopping": true,
   "early_stopping_patience": 20,
   "min_delta": 0.001,
   "trainer_kwargs": {"max_epochs": 200, "accelerator": "gpu"},
