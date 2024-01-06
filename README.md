@@ -16,6 +16,16 @@ The following are the requirements for using your data with this model:
 
 ---
 
+### Covariates Support:
+
+Past :x:
+
+Future :x:
+
+Static :x:
+
+---
+
 Here are the highlights of this implementation: <br/>
 
 - A **LagTST Forecaster** algorithm built using **GluonTS**
