@@ -4,7 +4,7 @@
   "lags_seq": null,
   "d_model": 32,
   "nhead": 2,
-  "dim_feedforward": 32,
+  "dim_feedforward": 64,
   "num_encoder_layers": 2,
   "norm_first": false,
   "activation": "relu",
