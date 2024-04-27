@@ -35,7 +35,6 @@ class Forecaster:
         data_schema: ForecastingSchema,
         history_forecast_ratio: int = None,
         lags_forecast_ratio: int = None,
-        context_length: int = None,
         lags_seq: Optional[List[int]] = None,
         d_model: int = 32,
         nhead: int = 4,
@@ -70,8 +69,6 @@ class Forecaster:
                 Sets the context parameters depending on the forecast horizon.
                 context_length = forecast horizon * lags_forecast_ratio
                 This parameters overides lags parameters.
-
-            context_length (int):  Number of time steps prior to prediction time that the model takes as inputs (default: 10 * prediction_length).
 
             lags_seq (Optional[List[int]]):
                 Indices of the lagged target values to use as inputs of the RNN
@@ -113,7 +110,6 @@ class Forecaster:
         """
 
         self.data_schema = data_schema
-        self.context_length = context_length
         self.lags_seq = lags_seq
         self.d_model = d_model
         self.nhead = nhead
@@ -142,8 +138,7 @@ class Forecaster:
                 self.data_schema.forecast_length * history_forecast_ratio
             )
 
-        if lags_forecast_ratio:
-            self.context_length = self.data_schema.forecast_length * lags_forecast_ratio
+        self.context_length = int(self.data_schema.forecast_length * lags_forecast_ratio)
 
         early_stopping = EarlyStopping(
             monitor="train_loss",
