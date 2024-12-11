@@ -3,17 +3,20 @@
   "lags_forecast_ratio": 4,
   "lags_seq": null,
   "d_model": 32,
-  "nhead": 2,
-  "dim_feedforward": 64,
+  "nhead": 4,
+  "dim_feedforward": 128,
   "num_encoder_layers": 2,
   "norm_first": false,
   "activation": "relu",
-  "lr": 1e-3,
+  "lr": 0.001,
   "dropout": 0.0,
   "scaling": "mean",
   "early_stopping": true,
   "early_stopping_patience": 20,
-  "min_delta": 1e-3,
-  "trainer_kwargs": { "max_epochs": 200, "accelerator": "gpu" },
+  "min_delta": 0.001,
+  "trainer_kwargs": {
+    "max_epochs": 200,
+    "accelerator": "gpu"
+  },
   "use_exogenous": true
 }
