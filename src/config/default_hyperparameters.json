@@ -5,7 +5,7 @@
   "d_model": 32,
   "nhead": 4,
   "dim_feedforward": 128,
-  "num_encoder_layers": 1,
+  "num_encoder_layers": 2,
   "norm_first": false,
   "activation": "relu",
   "lr": 0.001,
